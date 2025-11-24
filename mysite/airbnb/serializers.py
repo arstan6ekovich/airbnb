@@ -142,7 +142,8 @@ class PropertyDetailSerializer (serializers.ModelSerializer):
     class Meta:
         model = Property
         fields = ('id', 'title', 'description', 'property_images', 'city', 'price_per_night',
-                  'address', 'property_type', 'rules', 'max_guests', 'is_active', 'avg_number_review', 'owner', 'property_review')
+                  'address', 'property_type', 'rules', 'max_guests', 'is_active',
+                  'avg_number_review', 'owner', 'property_review')
 
 
     def avg_number_review (self, obj):
