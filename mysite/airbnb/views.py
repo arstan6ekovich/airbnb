@@ -38,6 +38,8 @@ class CustomLoginView(TokenObtainPairView):
 
 
 class LogoutView(generics.GenericAPIView):
+    serializer_class = None
+
     def post(self, request, *args, **kwargs):
         try:
             refresh_token = request.data["refresh"]
@@ -46,6 +48,7 @@ class LogoutView(generics.GenericAPIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
 
 class UserProfileListAPIView (generics.ListAPIView):
     queryset = UserProfile.objects.all()

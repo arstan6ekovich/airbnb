@@ -11,7 +11,7 @@ class UserProfile (AbstractUser):
     )
     role = models.CharField(choices=ROLE_CHOICES, default='guest')
     phone_number = PhoneNumberField()
-    avatar = models.ImageField(upload_to='avatar/')
+    avatar = models.ImageField(upload_to='avatar/', null=True, blank=True)
 
     def __str__(self):
         return f'{self.first_name} - {self.last_name}'
